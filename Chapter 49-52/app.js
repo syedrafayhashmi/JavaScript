@@ -17,3 +17,6 @@ function readMore(){
     paragraph.innerHTML = text;
 }
 
+// Task 3 Also see HTML file named task3.html
+
+
