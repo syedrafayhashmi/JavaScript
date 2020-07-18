@@ -24,8 +24,11 @@ function addStudent(){
     var Name = document.getElementById("Name").value;
     var Class = document.getElementById("Class").value;
     var rowCount = document.getElementById('dataTable').rows.length;
-    tableBody.innerHTML += "<tr> <th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning'>Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete("+rowCount+")'>Delete</button></td></tr>";
+    tableBody.innerHTML += "<tr> <th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' data-toggle='modal' data-target='#ModalEdit'>Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete("+rowCount+")'>Delete</button></td></tr>";
 }
 function rowDelete(rowIndex){
     document.getElementById("dataTable").deleteRow(rowIndex);
+}
+function edit(){
+
 }
