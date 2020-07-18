@@ -37,8 +37,8 @@ function editform(r){
     var editCells = editTable.rows.item(idx).cells;
     var cellName = editCells.item(1).innerHTML;
     var cellClass = editCells.item(2).innerHTML;
-    document.getElementById("editName").vaule = cellName;
-    document.getElementById("editClass").vaule = cellClass;
+    document.getElementById("editName").value = cellName;
+    document.getElementById("editClass").value = cellClass;
 }
 function edit(){
 
