@@ -24,15 +24,16 @@ function addStudent(){
     var Name = document.getElementById("Name").value;
     var Class = document.getElementById("Class").value;
     var rowCount = document.getElementById('dataTable').rows.length;
-    tableBody.innerHTML += "<tr> <th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' onclick = 'editform(this)' >Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete(this)'>Delete</button></td></tr>";
+    tableBody.innerHTML += "<tr><th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' onclick = 'editform(this)' >Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete(this)'>Delete</button></td></tr>";
 }
 function rowDelete(r){
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("dataTable").deleteRow(i);
 }
+var idx;
 function editform(r){
     $('#ModalEdit').modal('show');
-    var idx = r.parentNode.parentNode.rowIndex;
+    idx = r.parentNode.parentNode.rowIndex;
     var editTable = document.getElementById('dataTable');
     var editCells = editTable.rows.item(idx).cells;
     var cellName = editCells.item(1).innerHTML;
@@ -40,6 +41,12 @@ function editform(r){
     document.getElementById("editName").value = cellName;
     document.getElementById("editClass").value = cellClass;
 }
-function edit(){
+function edit(idx){
+    var repName = document.getElementById("editName").value;
+    var repClass = document.getElementById("editClass").value;
+    var t = document.getElementById('dataTable');
+    t.rows.item(idx).cells.item(1).innerHTML = repName;
+    t.rows.item(idx).cells.item(2).innerHTML = repClass;
+    
 
 }
