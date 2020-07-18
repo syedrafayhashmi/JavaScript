@@ -19,6 +19,10 @@ function readMore(){
 
 // Task 3 Also see HTML file named task3.html
 
-function edit(
-    
-)
+function addStudent(){
+    var tableBody = document.getElementById("tableBody");
+    var Name = document.getElementById("Name").value;
+    var Class = document.getElementById("Class").value;
+    var rowCount = document.getElementById('dataTable').rows.length;
+    tableBody.innerHTML += "<tr> <th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning'>Edit</button></td><td><button type='button' class='btn btn-danger'>Delete</button></td></tr>";
+}
