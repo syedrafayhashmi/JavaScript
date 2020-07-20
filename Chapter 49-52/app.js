@@ -24,7 +24,13 @@ function addStudent(){
     var Name = document.getElementById("Name").value;
     var Class = document.getElementById("Class").value;
     var rowCount = document.getElementById('dataTable').rows.length;
-    tableBody.innerHTML += "<tr><th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' onclick = 'editform(this)' >Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete(this)'>Delete</button></td></tr>";
+    if(Name !="" || Class !=""){
+        tableBody.innerHTML += "<tr><th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' onclick = 'editform(this)' >Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete(this)'>Delete</button></td></tr>";
+
+    }
+    else{
+        alert("Input Field is empty");
+    }
 }
 function rowDelete(r){
     var i = r.parentNode.parentNode.rowIndex;
@@ -48,5 +54,8 @@ function edit(idx){
     t.rows.item(idx).cells.item(1).innerHTML = repName;
     t.rows.item(idx).cells.item(2).innerHTML = repClass;
     
+
+}
+function reset(){
 
 }

@@ -10,7 +10,7 @@
 <body>
   <!-- Add Student Button -->
     <div style = "display:flex;justify-content: center;align-items: center;" >
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">Add Student</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal" onclick = "reset()">Add Student</button>
 </div>
 <!-- End of Add Student Button -->
 
@@ -69,11 +69,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="firstName">Name</label>
-                      <input type="text" class="form-control" placeholder="Name" id = "Name">
+                      <input type="text" class="form-control" placeholder="Name" id = "Name" value = "">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="lastName">Class</label>
-                      <input type="text" class="form-control" placeholder="Class" id="Class">
+                      <input type="text" class="form-control" placeholder="Class" id="Class" value = "">
                     </div>
                   </div>
             </div>
