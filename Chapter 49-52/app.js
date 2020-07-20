@@ -31,6 +31,8 @@ function addStudent(){
     else{
         alert("Input Field is empty");
     }
+    document.getElementById("Name").value = "";
+    document.getElementById("Class").value = "";
 }
 function rowDelete(r){
     var i = r.parentNode.parentNode.rowIndex;
