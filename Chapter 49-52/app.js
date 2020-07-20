@@ -23,9 +23,10 @@ function addStudent(){
     var tableBody = document.getElementById("tableBody");
     var Name = document.getElementById("Name").value;
     var Class = document.getElementById("Class").value;
-    var rowCount = document.getElementById('dataTable').rows.length;
+    //var rowCount = document.getElementById('dataTable').rows.length; row count makes same index row if last is deleted
+    var ind = + tableBody.lastElementChild.firstElementChild.innerHTML + 1;
     if(Name !="" || Class !=""){
-        tableBody.innerHTML += "<tr><th scope='row'>"+rowCount+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' onclick = 'editform(this)' >Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete(this)'>Delete</button></td></tr>";
+        tableBody.innerHTML += "<tr><th scope='row'>"+ind+"</th> <td>"+Name+"</td><td>"+Class+"</td><td><button type='button' class='btn btn-warning' onclick = 'editform(this)' >Edit</button></td><td><button type='button' class='btn btn-danger' onclick = 'rowDelete(this)'>Delete</button></td></tr>";
 
     }
     else{
